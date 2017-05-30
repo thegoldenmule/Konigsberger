@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.3p1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -89,6 +91,9 @@
     <Compile Include="Assets\Runtime\DataStructures\GraphEdge.cs" />
     <Compile Include="Assets\Runtime\DataStructures\GraphNode.cs" />
     <Compile Include="Assets\Runtime\Demo\Example 1\Example1Bootstrap.cs" />
+    <Compile Include="Assets\Runtime\Layout\CircleLayoutEngine.cs" />
+    <Compile Include="Assets\Runtime\Layout\IGraphLayoutEngine.cs" />
+    <Compile Include="Assets\Runtime\Rendering\CubeGraphRenderer.cs" />
     <Compile Include="Assets\Runtime\Rendering\IGraphRenderer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

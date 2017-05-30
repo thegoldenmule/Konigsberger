@@ -7,11 +7,29 @@ public class Example1Bootstrap : MonoBehaviour
 {
     public class GraphGenerationParameters
     {
+        public enum LayoutType
+        {
+            Circle
+        }
+
+        public enum RendererType
+        {
+            Cube
+        }
+
         public int NumNodes = 14;
         public int NumEdges = 24;
+
+        public LayoutType Layout;
+        public RendererType Renderer;
     }
 
     public bool GenerateGraph;
+    public GraphGenerationParameters Parameters;
+
+    private GraphContext _context;
+    private IGraphLayoutEngine _layout;
+    private IGraphRenderer _renderer;
 
     private void Update()
     {
@@ -19,7 +37,29 @@ public class Example1Bootstrap : MonoBehaviour
         {
             GenerateGraph = false;
 
+            if (null != _renderer)
+            {
+                _renderer.Uninitialize();
+            }
 
+            _layout = new CircleLayoutEngine();
+            _renderer = new CubeGraphRenderer();
+
+            var graph = Generate(Parameters);
+            
+            _context = new GraphContext();
+            _layout.Initialize(graph, _context);
+            _renderer.Initialize(graph, _context);
+        }
+
+        if (null != _layout)
+        {
+            _layout.Tick(Time.deltaTime, _context);
+        }
+
+        if (null != _renderer)
+        {
+            _renderer.Tick(Time.deltaTime, _context);
         }
     }
 

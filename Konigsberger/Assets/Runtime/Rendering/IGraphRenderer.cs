@@ -3,23 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class GraphNodeRenderData
+public class GraphNodeContextData
 {
     public string NodeGuid;
+
     public Vector3 Position;
     public Quaternion Rotation;
     public Vector3 Scale;
 }
 
 [Serializable]
-public class GraphRenderData
+public class GraphContext
 {
-    public List<GraphNodeRenderData> RenderData = new List<GraphNodeRenderData>();
+    public List<GraphNodeContextData> Nodes = new List<GraphNodeContextData>();
 }
 
 public interface IGraphRenderer
 {
-    void Initialize(Graph graph, GraphRenderData renderData);
-    void Tick(float dt, Bounds bounds);
+    void Initialize(Graph graph, GraphContext context);
+    void Tick(float dt, GraphContext context);
     void Uninitialize();
 }

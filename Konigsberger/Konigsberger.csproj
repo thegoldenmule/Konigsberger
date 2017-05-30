@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.3p1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -81,15 +79,18 @@
     <Reference Include="UnityEditor.iOS.Extensions.Common">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json.NCSoft">
+      <HintPath>Assets\Plugins\Newtonsoft.Json.NCSoft.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\DataStructures\DijkstraPathRequest.cs" />
-    <Compile Include="Assets\DataStructures\Graph.cs" />
-    <Compile Include="Assets\DataStructures\GraphEdge.cs" />
-    <Compile Include="Assets\DataStructures\GraphNode.cs" />
-    <Compile Include="Assets\Rendering\IGraphRenderer.cs" />
+    <Compile Include="Assets\Runtime\DataStructures\DijkstraPathRequest.cs" />
+    <Compile Include="Assets\Runtime\DataStructures\Graph.cs" />
+    <Compile Include="Assets\Runtime\DataStructures\GraphEdge.cs" />
+    <Compile Include="Assets\Runtime\DataStructures\GraphNode.cs" />
+    <Compile Include="Assets\Runtime\Demo\Example 1\Example1Bootstrap.cs" />
+    <Compile Include="Assets\Runtime\Rendering\IGraphRenderer.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
 </Project>

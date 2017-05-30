@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2015
+# Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konigsberger", "Konigsberger.csproj", "{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}"
 EndProject
 Global

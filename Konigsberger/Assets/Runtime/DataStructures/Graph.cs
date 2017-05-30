@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -183,7 +184,15 @@ public class Graph
 
     public int AddNode(GraphNode node)
     {
-        node.Index = _nodes.Count;
+        if (-1 == node.Index)
+        {
+            node.Index = _nodes.Count;
+        }
+
+        if (string.IsNullOrEmpty(node.Guid))
+        {
+            node.Guid = Guid.NewGuid().ToString();
+        }
 
         _nodes.Add(node);
         _edgesFromNode.Add(new List<GraphEdge>());

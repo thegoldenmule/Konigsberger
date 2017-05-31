@@ -13,13 +13,11 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile>
-    </CompilerResponseFile>
+    <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.3p1</UnityVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -86,15 +84,48 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\GeometryBuilder\Attributes\CustomFactory.cs" />
+    <Compile Include="Assets\GeometryBuilder\Attributes\CustomRenderer.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\2D\CircleGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\2D\PlaneGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\2D\PolygonGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\2D\QuadGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\3D\CylinderGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\3D\DodecahedronGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\3D\IcosahedronGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\3D\OctohedronGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\3D\PyramidGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\3D\UnitySphereGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\IGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\Geometry\StandardGeometryBuilder.cs" />
+    <Compile Include="Assets\GeometryBuilder\GeometryProvider.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderBufferSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderColorSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderNormalSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderTangentSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderUVSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderVertexSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\CircleGeometryBuilderSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\CylinderGeometryBuilderSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\GeometryBuilderSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\GeosphereGeometryBuilderSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\PlaneGeometryBuilderSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\PolygonGeometryBuilderSettings.cs" />
+    <Compile Include="Assets\GeometryBuilder\Settings\PyramidGeometryBuilderSettings.cs" />
     <Compile Include="Assets\Runtime\DataStructures\DijkstraPathRequest.cs" />
     <Compile Include="Assets\Runtime\DataStructures\Graph.cs" />
     <Compile Include="Assets\Runtime\DataStructures\GraphEdge.cs" />
     <Compile Include="Assets\Runtime\DataStructures\GraphNode.cs" />
     <Compile Include="Assets\Runtime\Demo\Example 1\Example1Bootstrap.cs" />
+    <Compile Include="Assets\Runtime\Graphics\LinePathRenderer.cs" />
     <Compile Include="Assets\Runtime\Layout\CircleLayoutEngine.cs" />
     <Compile Include="Assets\Runtime\Layout\IGraphLayoutEngine.cs" />
     <Compile Include="Assets\Runtime\Rendering\CubeGraphRenderer.cs" />
     <Compile Include="Assets\Runtime\Rendering\IGraphRenderer.cs" />
+    <Compile Include="Assets\Utility\ColorExtensions.cs" />
+    <Compile Include="Assets\Utility\IListExtensions.cs" />
+    <Compile Include="Assets\Utility\MeshExtensions.cs" />
+    <Compile Include="Assets\Utility\TypeExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

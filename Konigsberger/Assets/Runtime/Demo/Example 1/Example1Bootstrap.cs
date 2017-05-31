@@ -42,12 +42,17 @@ public class Example1Bootstrap : MonoBehaviour
                 _renderer.Uninitialize();
             }
 
+            if (null != _layout)
+            {
+                _layout.Uninitialize();
+            }
+
+            _context = new GraphContext();
             _layout = new CircleLayoutEngine();
             _renderer = new CubeGraphRenderer();
 
             var graph = Generate(Parameters);
             
-            _context = new GraphContext();
             _layout.Initialize(graph, _context);
             _renderer.Initialize(graph, _context);
         }

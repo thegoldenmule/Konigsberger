@@ -47,14 +47,13 @@ public class Example1Bootstrap : MonoBehaviour
                 _layout.Uninitialize();
             }
 
-            _context = new GraphContext();
-            _layout = new CircleLayoutEngine();
-            _renderer = new CubeGraphRenderer();
-
             var graph = Generate(Parameters);
+            _context = new GraphContext(graph);
+            _layout = new CircleLayoutEngine();
+            _renderer = new GeoGraphRenderer();
             
-            _layout.Initialize(graph, _context);
-            _renderer.Initialize(graph, _context);
+            _layout.Initialize(_context);
+            _renderer.Initialize(_context);
         }
 
         if (null != _layout)

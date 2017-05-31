@@ -2,9 +2,17 @@
 
 namespace TheGoldenMule.Geo
 {
+    /// <summary>
+    /// Settings for building geo.
+    /// </summary>
     [Serializable]
     public class GeometryBuilderSettings
     {
+        /// <summary>
+        /// Default.
+        /// </summary>
+        public static readonly GeometryBuilderSettings Default = new GeometryBuilderSettings();
+
         /// <summary>
         /// Descriptive name. This is used by the editor and will be null at
         /// runtime.

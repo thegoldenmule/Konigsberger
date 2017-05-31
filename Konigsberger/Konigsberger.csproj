@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.5.3p1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -120,7 +122,8 @@
     <Compile Include="Assets\Runtime\Graphics\LinePathRenderer.cs" />
     <Compile Include="Assets\Runtime\Layout\CircleLayoutEngine.cs" />
     <Compile Include="Assets\Runtime\Layout\IGraphLayoutEngine.cs" />
-    <Compile Include="Assets\Runtime\Rendering\CubeGraphRenderer.cs" />
+    <Compile Include="Assets\Runtime\Model\IGraphModel.cs" />
+    <Compile Include="Assets\Runtime\Rendering\GeoGraphRenderer.cs" />
     <Compile Include="Assets\Runtime\Rendering\IGraphRenderer.cs" />
     <Compile Include="Assets\Utility\ColorExtensions.cs" />
     <Compile Include="Assets\Utility\IListExtensions.cs" />

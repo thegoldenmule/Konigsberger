@@ -1,6 +1,6 @@
 ﻿public class CircleLayoutEngine : IGraphLayoutEngine
 {
-    public void Initialize(Graph graph, GraphContext context)
+    public void Initialize(GraphContext context)
     {
         
     }

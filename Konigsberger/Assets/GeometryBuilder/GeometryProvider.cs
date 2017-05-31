@@ -6,11 +6,27 @@ using UnityEngine;
 
 namespace TheGoldenMule.Geo
 {
+    /// <summary>
+    /// Creates geometry!
+    /// </summary>
     public static class GeometryProvider
     {
+        /// <summary>
+        /// Available IGeometryBuilder implementations.
+        /// </summary>
         public static readonly List<IGeometryBuilder> Builders = new List<IGeometryBuilder>();
+
+        /// <summary>
+        /// Available factories!
+        /// </summary>
         public static readonly List<MethodInfo> Factories = new List<MethodInfo>();
 
+        /// <summary>
+        /// Builds geometry.
+        /// </summary>
+        /// <param name="mesh"></param>
+        /// <param name="builder"></param>
+        /// <param name="settings"></param>
         public static void Build(
             Mesh mesh,
             IGeometryBuilder builder,
@@ -75,14 +91,19 @@ namespace TheGoldenMule.Geo
             mesh.uv2 = uv2s;
             mesh.colors = colors;
             mesh.normals = normals;
-            ;
         }
 
+        /// <summary>
+        /// Static constructor.
+        /// </summary>
         static GeometryProvider()
         {
             InitializeBuilders();
         }
 
+        /// <summary>
+        /// Loads in all builders.
+        /// </summary>
         private static void InitializeBuilders()
         {
             var factories = TypeExtensions.MethodsWithAttribute<CustomFactory>();
@@ -112,6 +133,12 @@ namespace TheGoldenMule.Geo
             }
         }
 
+        /// <summary>
+        /// Retrieves a factory.
+        /// </summary>
+        /// <param name="builder"></param>
+        /// <param name="factories"></param>
+        /// <returns></returns>
         private static MethodInfo Factory(
             IGeometryBuilder builder,
             MethodInfo[] factories)
@@ -128,11 +155,6 @@ namespace TheGoldenMule.Geo
             return typeof(GeometryProvider).GetMethod(
                 "DefaultFactory",
                 BindingFlags.Static | BindingFlags.NonPublic);
-        }
-
-        private static GeometryBuilderSettings DefaultFactory()
-        {
-            return new GeometryBuilderSettings();
         }
     }
 }

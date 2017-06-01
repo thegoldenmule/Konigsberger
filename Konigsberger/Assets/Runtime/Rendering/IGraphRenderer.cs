@@ -7,9 +7,9 @@ public class GraphNodeContextData
 {
     public readonly GraphNode Node;
 
-    public Vector3 Position;
-    public Quaternion Rotation;
-    public Vector3 Scale;
+    public Vector3 Position = Vector3.zero;
+    public Quaternion Rotation = Quaternion.identity;
+    public Vector3 Scale = Vector3.one;
 
     public GraphNodeContextData(GraphNode node)
     {
@@ -48,6 +48,8 @@ public class GraphContext
 
 public interface IGraphRenderer
 {
+    Transform Root { get; }
+
     void Initialize(GraphContext context);
     void Tick(float dt, GraphContext context);
     void Uninitialize();

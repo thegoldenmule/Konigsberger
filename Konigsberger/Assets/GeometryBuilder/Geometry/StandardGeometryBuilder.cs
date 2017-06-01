@@ -5,7 +5,7 @@ namespace TheGoldenMule.Geo
     /// <summary>
     /// Base implementation of IGeometryBuilder that returns null meshes.
     /// </summary>
-    public class StandardGeometryBuilder : IGeometryBuilder
+    public abstract class StandardGeometryBuilder : IGeometryBuilder
     {
         /// <summary>
         /// Number of verts!
@@ -16,6 +16,14 @@ namespace TheGoldenMule.Geo
         /// Number of triangles
         /// </summary>
         protected int _numTriangles;
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        protected StandardGeometryBuilder()
+        {
+            //
+        }
 
         /// <summary>
         /// Initializes the builder.

@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Example1Bootstrap : MonoBehaviour
 {
+    [Serializable]
     public class GraphGenerationParameters
     {
         public enum LayoutType
@@ -14,10 +15,10 @@ public class Example1Bootstrap : MonoBehaviour
 
         public enum RendererType
         {
-            Cube
+            Geo
         }
 
-        public int NumNodes = 14;
+        public int NumNodes = 100;
         public int NumEdges = 24;
 
         public LayoutType Layout;
@@ -26,6 +27,8 @@ public class Example1Bootstrap : MonoBehaviour
 
     public bool GenerateGraph;
     public GraphGenerationParameters Parameters;
+    public Material Material;
+    public float Size = 10;
 
     private GraphContext _context;
     private IGraphLayoutEngine _layout;
@@ -49,8 +52,14 @@ public class Example1Bootstrap : MonoBehaviour
 
             var graph = Generate(Parameters);
             _context = new GraphContext(graph);
-            _layout = new CircleLayoutEngine();
-            _renderer = new GeoGraphRenderer();
+
+            var sphereLayout = new SphereLayoutEngine();
+            sphereLayout.Size = Size;
+            _layout = sphereLayout;
+
+            var geoRenderer = new GeoGraphRenderer();
+            geoRenderer.Material = Material;
+            _renderer = geoRenderer;
             
             _layout.Initialize(_context);
             _renderer.Initialize(_context);

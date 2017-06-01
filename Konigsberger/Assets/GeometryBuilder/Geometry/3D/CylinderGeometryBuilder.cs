@@ -143,9 +143,6 @@ namespace TheGoldenMule.Geo
 
             // caps
             {
-                var numCircleVerts = _numSides + 1;
-                var numCircleTriangles = _numSides;
-
                 // top
                 BuildCap(
                     ref vertices,

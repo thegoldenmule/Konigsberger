@@ -1,4 +1,4 @@
-﻿public class CircleLayoutEngine : IGraphLayoutEngine
+﻿public class ReingoldSpringLayoutEngine : IGraphLayoutEngine
 {
     public void Initialize(GraphContext context)
     {

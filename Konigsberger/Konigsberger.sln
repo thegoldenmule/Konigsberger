@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konigsberger", "Konigsberger.csproj", "{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Konigsberger.Editor", "Konigsberger.Editor.csproj", "{5CDCA476-B0BC-333F-B19E-BB7CF127311F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CDCA476-B0BC-333F-B19E-BB7CF127311F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CDCA476-B0BC-333F-B19E-BB7CF127311F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CDCA476-B0BC-333F-B19E-BB7CF127311F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CDCA476-B0BC-333F-B19E-BB7CF127311F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

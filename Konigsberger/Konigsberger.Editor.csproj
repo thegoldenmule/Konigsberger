@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}</ProjectGuid>
+    <ProjectGuid>{5CDCA476-B0BC-333F-B19E-BB7CF127311F}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.6.0f3</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -52,11 +52,26 @@
     <Reference Include="UnityEngine">
       <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Advertisements">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Advertisements.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\UnityAssemblies\UnityEditor.UI.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Networking">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.TestRunner">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
       <HintPath>Library\UnityAssemblies\UnityEngine.TestRunner.dll</HintPath>
@@ -64,17 +79,44 @@
     <Reference Include="nunit.framework">
       <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.TreeEditor">
+      <HintPath>Library\UnityAssemblies\UnityEditor.TreeEditor.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Analytics">
       <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Analytics">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.HoloLens">
+      <HintPath>Library\UnityAssemblies\UnityEditor.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
       <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.VR">
+      <HintPath>Library\UnityAssemblies\UnityEditor.VR.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.VR">
       <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor">
-      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    <Reference Include="UnityEditor.Graphs">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Graphs.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.iOS.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+      <HintPath>Library\UnityAssemblies\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
+      <HintPath>Library\UnityAssemblies\SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -87,55 +129,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AssetStore\FastLineRenderer\Demo\FastLineRendererDemoList.cs" />
-    <Compile Include="Assets\AssetStore\FastLineRenderer\Demo\FastLineRendererDemoScript.cs" />
-    <Compile Include="Assets\AssetStore\FastLineRenderer\Script\FastLineRenderer.cs" />
-    <Compile Include="Assets\AssetStore\FastLineRenderer\Script\FastLineRendererEditorUtilities.cs" />
-    <Compile Include="Assets\AssetStore\FastLineRenderer\Script\PathGenerator.cs" />
-    <Compile Include="Assets\GeometryBuilder\Attributes\CustomFactory.cs" />
-    <Compile Include="Assets\GeometryBuilder\Attributes\CustomRenderer.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\2D\CircleGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\2D\PlaneGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\2D\PolygonGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\2D\QuadGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\3D\CylinderGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\3D\DodecahedronGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\3D\IcosahedronGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\3D\OctohedronGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\3D\PyramidGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\3D\UnitySphereGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\IGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\Geometry\StandardGeometryBuilder.cs" />
-    <Compile Include="Assets\GeometryBuilder\GeometryProvider.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderBufferSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderColorSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderNormalSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderTangentSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderUVSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\Buffers\GeometryBuilderVertexSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\CircleGeometryBuilderSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\CylinderGeometryBuilderSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\GeometryBuilderSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\GeosphereGeometryBuilderSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\PlaneGeometryBuilderSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\PolygonGeometryBuilderSettings.cs" />
-    <Compile Include="Assets\GeometryBuilder\Settings\PyramidGeometryBuilderSettings.cs" />
-    <Compile Include="Assets\Runtime\DataStructures\DijkstraPathRequest.cs" />
-    <Compile Include="Assets\Runtime\DataStructures\Graph.cs" />
-    <Compile Include="Assets\Runtime\DataStructures\GraphEdge.cs" />
-    <Compile Include="Assets\Runtime\DataStructures\GraphNode.cs" />
-    <Compile Include="Assets\Runtime\Demo\Example 1\Example1Bootstrap.cs" />
-    <Compile Include="Assets\Runtime\Graphics\LinePathRenderer.cs" />
-    <Compile Include="Assets\Runtime\Layout\IGraphLayoutEngine.cs" />
-    <Compile Include="Assets\Runtime\Layout\RandomLayoutEngine.cs" />
-    <Compile Include="Assets\Runtime\Layout\ReingoldSpringLayoutEngine.cs" />
-    <Compile Include="Assets\Runtime\Layout\SphereLayoutEngine.cs" />
-    <Compile Include="Assets\Runtime\Rendering\GeoGraphRenderer.cs" />
-    <Compile Include="Assets\Runtime\Rendering\IGraphRenderer.cs" />
-    <Compile Include="Assets\Utility\ColorExtensions.cs" />
-    <Compile Include="Assets\Utility\IListExtensions.cs" />
-    <Compile Include="Assets\Utility\MeshExtensions.cs" />
-    <Compile Include="Assets\Utility\TypeExtensions.cs" />
+    <ProjectReference Include="Konigsberger.csproj">
+      <Project>{2B1A0FD2-7112-FB4E-8B43-1577563FA2BF}</Project>
+      <Name>Konigsberger</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\AssetStore\FastLineRenderer\Script\Editor\FastLineRendererEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\AssetStore\FastLineRenderer\Material\FastLineRendererShader.shader" />

@@ -8,6 +8,7 @@ public class GeoGraphRenderer : IGraphRenderer
     public Transform Root { get; private set; }
 
     private readonly List<GameObject> _nodes = new List<GameObject>();
+    private readonly List<GameObject> _edges = new List<GameObject>();
 
     public void Initialize(GraphContext context)
     {
@@ -17,13 +18,20 @@ public class GeoGraphRenderer : IGraphRenderer
         for (var i = 0; i < context.Nodes.Count; i++)
         {
             var node = context.Nodes[i];
-            var gameObject = NodeGameObject(node);
+            var nodeGameObject = NodeGameObject(node);
 
-            _nodes.Add(gameObject);
+            _nodes.Add(nodeGameObject);
+
+            // create a line for each edge out
+            var edgesOut = context.Graph.GetEdgesFrom(node.Node);
+            foreach (var edge in edgesOut)
+            {
+                var edgeGameObject = EdgeGameObject(
+                    context.Nodes[edge.From],
+                    context.Nodes[edge.To]);
+                edgeGameObject.transform.parent = nodeGameObject.transform;
+            }
         }
-
-        // create a line for each edge!
-        
     }
 
     public void Tick(float dt, GraphContext context)
@@ -59,6 +67,17 @@ public class GeoGraphRenderer : IGraphRenderer
                     Rotation = node.Rotation
                 }
             });
+
+        return gameObject;
+    }
+
+    private GameObject EdgeGameObject(
+        GraphNodeContextData start,
+        GraphNodeContextData end)
+    {
+        var gameObject = new GameObject();
+
+
 
         return gameObject;
     }

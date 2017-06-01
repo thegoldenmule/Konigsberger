@@ -98,19 +98,16 @@ public class Example1Bootstrap : MonoBehaviour
             return null;
         }
 
-        var data = new GraphData
-        {
-            Nodes = Enumerable
-                .Range(0, parameters.NumNodes)
-                .Select(i => new GraphNode
-                {
-                    Guid = Guid.NewGuid().ToString(),
-                    Label = _alphabet[i % _alphabet.Length],
-                    Index = i
-                })
-                .ToArray()
-        };
+        var graph = new Graph();
 
+        for (var i = 0; i < parameters.NumNodes; i++)
+        {
+            graph.AddNode(new GraphNode
+            {
+                Label = _alphabet[i % _alphabet.Length]
+            });
+        }
+        
         var edges = new List<GraphEdge>();
         while (edges.Count < parameters.NumEdges)
         {
@@ -137,11 +134,12 @@ public class Example1Bootstrap : MonoBehaviour
                 continue;
             }
 
-            edges.Add(new GraphEdge(from, to));
+            var edge = new GraphEdge(from, to);
+            edges.Add(edge);
+
+            graph.AddEdge(edge);
         }
 
-        data.Edges = edges.ToArray();
-
-        return new Graph(data);
+        return graph;
     }
 }

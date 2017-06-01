@@ -188,6 +188,10 @@ public class Graph
         {
             node.Index = _nodes.Count;
         }
+        else
+        {
+            return node.Index;
+        }
 
         if (string.IsNullOrEmpty(node.Guid))
         {

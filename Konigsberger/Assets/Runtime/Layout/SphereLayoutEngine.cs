@@ -25,7 +25,7 @@ public class SphereLayoutEngine : IGraphLayoutEngine
             var x = Mathf.Cos(phi) * r;
             var z = Mathf.Sin(phi) * r;
 
-            node.Position = 10 * new Vector3(x, y, z);
+            node.Position = Size * new Vector3(x, y, z);
         }
     }
 
